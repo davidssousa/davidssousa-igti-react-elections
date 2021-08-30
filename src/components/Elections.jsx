@@ -8,7 +8,8 @@ export default function Elections(props) {
   const [city, setCity] = useState(new City())
 
   useEffect(() => {
-    const baseUrl = 'https://igti-react-backend.herokuapp.com';
+    // const baseUrl = 'https://igti-react-backend.herokuapp.com';
+    const baseUrl = 'http://localhost:3002';
     const reqCities = axios.get(`${baseUrl}/cities`)
     const reqCantidates = axios.get(`${baseUrl}/candidates`)
     const reqElections = axios.get(`${baseUrl}/election`)
