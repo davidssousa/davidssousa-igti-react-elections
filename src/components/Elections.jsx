@@ -134,7 +134,7 @@ export default function Elections(props) {
                   <h2>{c.candidate.name}</h2>
                   <div>
                     <i className="far fa-address-card"></i>
-                    <h3>{c.votes} votos</h3>
+                    <h3>{c.votes.toLocaleString('pt-BR')} votos</h3>
                   </div>
                   <div>
                     <i className="fas fa-percent"></i>
