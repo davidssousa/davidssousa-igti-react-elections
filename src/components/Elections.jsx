@@ -120,14 +120,16 @@ export default function Elections(props) {
           city?.candidates?.map((c, i, arr) => {
             console.log(c.percentual.replace(',', '.'))
             return (
-              <div className={
-                  i === 0 && c.percentual?.replace(',', '.') >= 50 
-                    ? 'card winner' 
-                    : i <= 1 && arr[0].percentual?.replace(',', '.') <= 50 
-                      ? 'card secondRound'
-                      : 'card'
-                } key={guid()}>
-                <div className="face front" key={guid()}>
+              <div className="card" key={guid()}>
+                <div 
+                    className={
+                        i === 0 && c.percentual?.replace(',', '.') >= 50 
+                          ? 'face front winner' 
+                          : i <= 1 && arr[0].percentual?.replace(',', '.') <= 50 
+                            ? 'face front secondRound'
+                            : 'face front'
+                    }
+                    key={guid()}>
                   <img src={`/img/${c.candidate.username}.png`} alt="" />
                   <h2>{c.candidate.name}</h2>
                   <div>
@@ -157,7 +159,13 @@ export default function Elections(props) {
                     }
                   </div>
                 </div>
-                <div className="face back" key={guid()}>
+                <div className={
+                        i === 0 && c.percentual?.replace(',', '.') >= 50 
+                          ? 'face back winner' 
+                          : i <= 1 && arr[0].percentual?.replace(',', '.') <= 50 
+                            ? 'face back secondRound'
+                            : 'face back'
+                    } key={guid()}>
                   <img src={`/img/${c.candidate.username}-person.png`} alt="" />
                   <h2>{c.candidate.realName}</h2>
                   <div>
